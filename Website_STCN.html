@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Climate Now</title>
+    <style>
+    
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+
+    header {
+        background-color: #2E8B57;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 90%;
+        max-width: 1400px; 
+        margin: 0 auto; 
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    html {
+            scroll-behavior: smooth;
+        }
+
+
+    #emissionTable {
+        width: 90%;             
+        max-width: 1400px;      
+        margin: 20px auto;     
+        border-collapse: collapse;
+        border-radius: 8px;     
+        overflow: hidden;
+    }
+
+
+    .table-container {
+        width: 90%;             
+        max-width: 1400px;     
+        margin: 20px auto;      
+        background-color: white; 
+        padding: 20px;       
+        border-radius: 8px;   
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+        border: 1px solid #2E8B57; 
+        overflow-x: auto;       
+    }
+
+
+    #emissionTable {
+        width: 100%;           
+        border-collapse: collapse;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+
+#emissionTable th, #emissionTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+
+#emissionTable th {
+    background-color: #2E8B57;
+    color: white;
+    cursor: pointer;
+}
+
+
+#emissionTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+        h2 {
+            color: #2E8B57;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-left: 0; 
+        }
+
+
+
+        p {
+            justify-content: right;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            text-align: justify;
+            margin: auto;
+            padding: 5px;
+            line-height: 1.5;
+            
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header .logo h1 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            margin-left: 10px;
+        }
+
+        select {
+            padding: 3px 5px;
+            font-size: 12px;
+            border-radius: 4px;
+            border: none;
+            background-color: #fff;
+            color: #2E8B57;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+ 
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: #2E8B57;
+        }
+
+
+       
+
+        .table-container {
+            max-height: 200px; 
+            overflow-y: auto;
+            border: 1px solid #ccc;
+        }
+
+        #searchInput {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+ 
+        footer {
+            background-color: #333;
+            color: #EAFAF1;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #2E8B57;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+            }
+
+            .dropdown {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">
+            <img src="Downloads/DALL·E 2025-01-15 18.41.10 - A professional and impactful logo for the non-profit organization 'Save the Climate Now'. The logo features a stylized Earth with a green leaf wrappin.webp" alt="Logo der Organisation">
+            <h1>SNTC - SAVE THE CLIMATE NOW</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Startseite</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#emissions">CO₂-Emissionsdaten</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+
+ 
+        <div class="dropdown">
+            <select id="direction" onchange="changeDirection()">
+                <option value="ltr">Left To Right</option>
+                <option value="rtl">Right To Left</option>
+            </select>
+        </div>
+    </header>
+
+
+    <section id="home">
+        <h2>Willkommen bei Save the Climate Now</h2>
+        <p>Unsere Mission ist es, den Klimawandel zu bekämpfen und Nachhaltigkeit weltweit zu fördern.</p>
+    </section>
+
+    <section id="about">
+        <h2>Über Uns</h2>
+        <p>Wir sind eine Non-Profit-Organisation, die sich für den Schutz unseres Planeten einsetzt. Unsere Vision ist eine nachhaltige Zukunft für kommende Generationen.</p>
+        <p>Wir von Save The Climate Now haben uns im Jahr 2015 in Musterstadt gegründet, weil wir nicht länger zusehen wollten, wie der Klimawandel unseren Planeten bedroht. 
+            Als engagierte Wissenschaftler, Aktivisten und Unternehmer haben wir erkannt, dass Aufklärung allein nicht ausreicht – wir müssen aktiv handeln. 
+            Unser Ziel ist es, Transparenz über CO₂-Emissionen zu schaffen und nachhaltige Lösungen voranzutreiben, um die Zukunft für kommende Generationen zu sichern.
+            
+            Seit unserer Gründung konnten wir bereits viel bewegen. Mit unserer öffentlich zugänglichen Plattform stellen wir detaillierte Daten zu den CO₂-Emissionen von Ländern und 
+            Unternehmen bereit, um Verantwortung sichtbar zu machen. Gemeinsam mit lokalen Gemeinschaften haben wir weltweit über 5 Millionen Bäume gepflanzt und setzen uns aktiv für 
+            
+            strengere Klimaschutzgesetze ein. Wir kooperieren mit Unternehmen, um klimafreundliche Innovationen zu fördern und echte Veränderungen zu bewirken.
+            
+            Doch das ist erst dr Anfang. Wir glauben fest daran, dass wir gemeinsam den Klimawandel stoppen können. Mit Wissen, Engagement und klaren Zielen gestalten wir eine 
+            nachhaltige und lebenswerte Zukunft für alle.</p>
+    </section>
+
+    <body>
+
+        <h2>CO₂-Emissionen </h2>
+    
+  
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Nach Kontinent, 
+        Land oder Unternehmen suchen...">
+    
+
+        <div class="table-container">
+            <table id="emissionTable">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Kontinent &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(1)">Land &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(2)">Unternehmen &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(3)">CO₂-Ausstoß (in Tonnen) &#x25B2;&#x25BC;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr><td>Europa</td><td>Deutschland</td><td>Volkswagen AG</td><td>500.000</td></tr>
+                    <tr><td>Europa</td><td>Deutschland</td><td>Siemens</td><td>350.000</td></tr>
+                    <tr><td>Europa</td><td>Deutschland</td><td>BASF</td><td>400.000</td></tr>
+                    <tr><td>Europa</td><td>Deutschland</td><td>Allianz</td><td>300.000</td></tr>
+                
+                    <tr><td>Europa</td><td>Frankreich</td><td>TotalEnergies</td><td>400.000</td></tr>
+                    <tr><td>Europa</td><td>Frankreich</td><td>EDF</td><td>350.000</td></tr>
+                    <tr><td>Europa</td><td>Frankreich</td><td>L'Oréal</td><td>200.000</td></tr>
+                    <tr><td>Europa</td><td>Frankreich</td><td>Airbus</td><td>300.000</td></tr>
+                
+                    <tr><td>Europa</td><td>Italien</td><td>ENI</td><td>320.000</td></tr>
+                    <tr><td>Europa</td><td>Italien</td><td>Fiat Chrysler</td><td>280.000</td></tr>
+                    <tr><td>Europa</td><td>Italien</td><td>Luxottica</td><td>150.000</td></tr>
+                    <tr><td>Europa</td><td>Italien</td><td>Enel</td><td>250.000</td></tr>
+                
+                    <tr><td>Europa</td><td>Spanien</td><td>Iberdrola</td><td>280.000</td></tr>
+                    <tr><td>Europa</td><td>Spanien</td><td>Repsol</td><td>320.000</td></tr>
+                    <tr><td>Europa</td><td>Spanien</td><td>Zara</td><td>180.000</td></tr>
+                    <tr><td>Europa</td><td>Spanien</td><td>Banco Santander</td><td>200.000</td></tr>
+                
+                    <tr><td>Europa</td><td>Niederlande</td><td>Royal Dutch Shell</td><td>450.000</td></tr>
+                    <tr><td>Europa</td><td>Niederlande</td><td>Philips</td><td>150.000</td></tr>
+                    <tr><td>Europa</td><td>Niederlande</td><td>ING</td><td>120.000</td></tr>
+                    <tr><td>Europa</td><td>Niederlande</td><td>Unilever</td><td>200.000</td></tr>
+                
+                    <tr><td>Europa</td><td>Schweiz</td><td>Nestlé</td><td>300.000</td></tr>
+                    <tr><td>Europa</td><td>Schweiz</td><td>Novartis</td><td>250.000</td></tr>
+                    <tr><td>Europa</td><td>Schweiz</td><td>Credit Suisse</td><td>220.000</td></tr>
+                    <tr><td>Europa</td><td>Schweiz</td><td>UBS</td><td>200.000</td></tr>
+                
+                   
+                    <tr><td>Nordamerika</td><td>USA</td><td>ExxonMobil</td><td>1.200.000</td></tr>
+                    <tr><td>Nordamerika</td><td>USA</td><td>Amazon</td><td>700.000</td></tr>
+                    <tr><td>Nordamerika</td><td>USA</td><td>Microsoft</td><td>600.000</td></tr>
+                    <tr><td>Nordamerika</td><td>USA</td><td>Apple</td><td>500.000</td></tr>
+                
+                    <tr><td>Nordamerika</td><td>Kanada</td><td>TC Energy</td><td>450.000</td></tr>
+                    <tr><td>Nordamerika</td><td>Kanada</td><td>Suncor Energy</td><td>500.000</td></tr>
+                    <tr><td>Nordamerika</td><td>Kanada</td><td>Bombardier</td><td>300.000</td></tr>
+                    <tr><td>Nordamerika</td><td>Kanada</td><td>Hydro-Québec</td><td>250.000</td></tr>
+                
+                    <tr><td>Nordamerika</td><td>Mexiko</td><td>Pemex</td><td>600.000</td></tr>
+                    <tr><td>Nordamerika</td><td>Mexiko</td><td>Grupo Bimbo</td><td>400.000</td></tr>
+                    <tr><td>Nordamerika</td><td>Mexiko</td><td>Telmex</td><td>300.000</td></tr>
+                    <tr><td>Nordamerika</td><td>Mexiko</td><td>América Móvil</td><td>350.000</td></tr>
+                
+                   
+                    <tr><td>Asien</td><td>China</td><td>State Grid</td><td>2.500.000</td></tr>
+                    <tr><td>Asien</td><td>China</td><td>Alibaba</td><td>600.000</td></tr>
+                    <tr><td>Asien</td><td>China</td><td>PetroChina</td><td>1.800.000</td></tr>
+                    <tr><td>Asien</td><td>China</td><td>Tencent</td><td>500.000</td></tr>
+                
+                    <tr><td>Asien</td><td>Japan</td><td>Toyota</td><td>800.000</td></tr>
+                    <tr><td>Asien</td><td>Japan</td><td>Honda</td><td>700.000</td></tr>
+                    <tr><td>Asien</td><td>Japan</td><td>Sony</td><td>300.000</td></tr>
+                    <tr><td>Asien</td><td>Japan</td><td>Mitsubishi</td><td>500.000</td></tr>
+                
+                    
+                    <tr><td>Afrika</td><td>Südafrika</td><td>Sasol</td><td>400.000</td></tr>
+                    <tr><td>Afrika</td><td>Nigeria</td><td>Dangote Group</td><td>300.000</td></tr>
+                    <tr><td>Afrika</td><td>Ägypten</td><td>Orascom</td><td>250.000</td></tr>
+                    <tr><td>Afrika</td><td>Marokko</td><td>OCP Group</td><td>220.000</td></tr>
+                
+                    <tr><td>Australien</td><td>Australien</td><td>BHP</td><td>500.000</td></tr>
+                    <tr><td>Australien</td><td>Australien</td><td>Rio Tinto</td><td>450.000</td></tr>
+                    <tr><td>Australien</td><td>Australien</td><td>Woodside Energy</td><td>400.000</td></tr>
+                    <tr><td>Australien</td><td>Australien</td><td>Fortescue Metals</td><td>350.000</td></tr>
+                </tbody>
+                
+                
+                    
+            </table>
+        </div>
+    
+ 
+        <script>
+
+            function sortTable(n) {
+                let table = document.getElementById("emissionTable");
+                let switching = true, dir = "asc", switchcount = 0;
+    
+                while (switching) {
+                    switching = false;
+                    let rows = table.rows;
+    
+                    for (let i = 1; i < rows.length - 1; i++) {
+                        let shouldSwitch = false;
+                        let x = rows[i].getElementsByTagName("TD")[n];
+                        let y = rows[i + 1].getElementsByTagName("TD")[n];
+    
+                        if (dir === "asc" && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        } else if (dir === "desc" && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+                }
+            }
+    
+  
+
+        function sortTable(columnIndex) {
+            const table = document.getElementById("emissionTable");
+            const tbody = table.tBodies[0];
+            const rowsArray = Array.from(tbody.rows);
+            const isNumeric = !isNaN(rowsArray[0].cells[columnIndex].innerText.trim());
+            let ascending = true;
+
+            rowsArray.sort((a, b) => {
+                let x = a.cells[columnIndex].innerText.trim();
+                let y = b.cells[columnIndex].innerText.trim();
+
+                if (isNumeric) {
+                    x = parseFloat(x.replace(/,/g, ''));
+                    y = parseFloat(y.replace(/,/g, ''));
+                }
+
+                return ascending ? (x > y ? 1 : -1) : (x < y ? 1 : -1);
+            });
+
+            rowsArray.forEach(row => tbody.appendChild(row));
+            ascending = !ascending;
+        }
+
+
+        function filterTable() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const table = document.getElementById("emissionTable");
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let visible = false;
+                const cells = rows[i].getElementsByTagName("td");
+
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j]) {
+                        const textValue = cells[j].innerText.toLowerCase();
+                        if (textValue.indexOf(input) > -1) {
+                            visible = true;
+                            break;
+                        }
+                    }
+                }
+
+                rows[i].style.display = visible ? "" : "none";
+            }
+        }
+
+        <!-- JavaScript zum Schutz vor Code-Injektion -->
+
+
+        function sanitizeInput(input) {
+            const tempElement = document.createElement('div');
+            tempElement.textContent = input;  // Wandelt Sonderzeichen in Text um
+            return tempElement.innerHTML;     // Gibt bereinigten Text zurück
+        }
+
+     
+        function filterTable() {
+            const inputField = document.getElementById("searchInput");
+            const filter = sanitizeInput(inputField.value.toLowerCase()); // Bereinigte Eingabe
+            const table = document.getElementById("emissionTable");
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let visible = false;
+                const cells = rows[i].getElementsByTagName("td");
+
+                for (let j = 0; j < cells.length; j++) {
+                    if (cells[j]) {
+                        const cellText = sanitizeInput(cells[j].innerText.toLowerCase());
+                        if (cellText.includes(filter)) {
+                            visible = true;
+                            break;
+                        }
+                    }
+                }
+                rows[i].style.display = visible ? "" : "none";
+            }
+        }
+
+
+        document.getElementById("searchInput").addEventListener("input", function() {
+            this.value = sanitizeInput(this.value);
+        });
+    </script>
+    
+    </body>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <p>Du hast Fragen oder möchtest mitmachen? Kontaktiere uns:</p>
+        <p>E-Mail: kontakt@savetheclimatenow.org</p>
+    </section>
+
+
+    <script> 
+        function changeDirection() {
+            const selectedDirection = document.getElementById("direction").value;
+            document.body.setAttribute("dir", selectedDirection);
+        }
+    </script>
+
+
+    <footer>
+        <p>&copy; 2024 Save the Climate Now. Alle Rechte vorbehalten. | 
+            <a href="http://127.0.0.1:3000/Users/Pari/Datenschutz.html">Datenschutz</a> | 
+            <a href="http://127.0.0.1:3000/Users/Pari/impressum.html">Impressum</a></p>
+    </footer>
+
+ 
+
+</body>
+</html>

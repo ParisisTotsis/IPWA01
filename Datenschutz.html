@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutz - Save the Climate Now</title>
+    <style>
+             body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+
+    header {
+        background-color: #2E8B57;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 90%;
+        max-width: 1400px; 
+        margin: 0 auto; 
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+}
+
+        p {
+            justify-content: right;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            text-align: justify;
+            margin: auto;
+            padding: 5px;
+            line-height: 1.5;
+            
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        header .logo h1 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown {
+            margin-left: 10px;
+        }
+
+        select {
+            padding: 3px 5px;
+            font-size: 12px;
+            border-radius: 4px;
+            border: none;
+            background-color: #fff;
+            color: #2E8B57;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+        }
+
+ 
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        h2 {
+            color: #2E8B57;
+        }
+
+
+
+        .table-container {
+            max-height: 100px; 
+            overflow-y: auto;
+            border: 1px solid #ccc;
+        }
+
+        #searchInput {
+            width: 300px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+ 
+        footer {
+            background-color: #333;
+            color: #eafaf1;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #2E8B57;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+            }
+
+            .dropdown {
+                margin-top: 10px;
+            }
+        }
+
+        .content {
+    max-width: 800px;            
+    margin: 100px auto 50px;     
+    background-color: white;     
+    padding: 30px;              
+    border-radius: 8px;         
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: justify;         /* Blocksatz für den Text */
+}
+
+/* Abstand zum Footer */
+footer {
+    margin-top: 30px;
+}
+
+/* Header-Abstand */
+header {
+    margin-bottom: 20px;
+}
+
+/* Für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .content {
+        margin: 80px 20px 30px;  /* Anpassung für mobile Geräte */
+        padding: 20px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="logo">
+            <img src="Downloads/DALL·E 2025-01-15 18.41.10 - A professional and impactful logo for the non-profit organization 'Save the Climate Now'. The logo features a stylized Earth with a green leaf wrappin.webp" alt="Logo der Organisation">
+            <h1>SNTC - SAVE THE CLIMATE NOW</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:3000/Users/Pari/Website_STCN.html">Startseite</a></li>
+                <li><a href="http://127.0.0.1:3000/Users/Pari/Website_STCN.html">Über uns</a></li>
+                <li><a href="http://127.0.0.1:3000/Users/Pari/Website_STCN.html">CO₂-Emissionsdaten</a></li>
+                <li><a href="http://127.0.0.1:3000/Users/Pari/Website_STCN.html">Kontakt</a></li>
+            </ul>
+        </nav>
+
+
+        <div class="dropdown">
+            <select id="direction" onchange="changeDirection()">
+                <option value="ltr">Left To Right</option>
+                <option value="rtl">Right To Left</option>
+            </select>
+        </div>
+
+    </header>
+
+    <div class="content">
+        <h2>Datenschutzerklärung</h2>
+
+        <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG).</p>
+
+        <h3>1. Allgemeines</h3>
+        <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (z.B. Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies stets auf freiwilliger Basis.</p>
+
+        <h3>2. Verantwortliche Stelle</h3>
+        <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
+        <p>
+            STCN - Save The Climate Now e.V.<br>
+            Musterstraße 123<br>
+            10115 Berlin<br>
+            Deutschland<br>
+            E-Mail: kontakt@savetheclimatenow.org<br>
+        </p>
+
+        <h3>3. Erhebung und Speicherung personenbezogener Daten</h3>
+        <p>Wir speichern Ihre personenbezogenen Daten nur dann, wenn Sie uns diese freiwillig mitteilen, z.B. bei Kontaktaufnahmen. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
+
+        <h3>4. Verwendung von Cookies</h3>
+        <p>Unsere Website verwendet sogenannte Cookies. Dabei handelt es sich um kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Sie richten keinen Schaden an. Cookies helfen uns, unser Angebot nutzerfreundlicher zu gestalten.</p>
+
+        <h3>5. Ihre Rechte</h3>
+        <p>Sie haben das Recht, jederzeit Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten. Außerdem haben Sie das Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.</p>
+
+
+        <h3>6. Datensicherheit</h3>
+        <p>Wir verwenden innerhalb des Website-Besuchs das verbreitete SSL-Verfahren (Secure Socket Layer) in Verbindung mit der jeweils höchsten Verschlüsselungsstufe.</p>
+
+        <h3>7. Änderungen der Datenschutzerklärung</h3>
+        <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht.</p>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Save the Climate Now. Alle Rechte vorbehalten. | 
+            <a href="http://127.0.0.1:3000/Users/Pari/Datenschutz.html">Datenschutz</a> |
+             <a href="http://127.0.0.1:3000/Users/Pari/impressum.html">Impressum</a></p>
+    </footer>
+
+    <script>
+     
+        function changeDirection() {
+            const selectedDirection = document.getElementById("direction").value;
+            document.body.setAttribute("dir", selectedDirection);
+        }
+    </script>
+
+<script>
+    function changeDirection() {
+        const selectedDirection = document.getElementById("direction").value;
+        document.body.setAttribute("dir", selectedDirection);
+    }
+</script>
+
+</body>
+</html>
